@@ -6,6 +6,8 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "league/tactician": "^1.0",
+        "league/tactician-bundle": "^1.1",
+        "sensio/framework-extra-bundle": "^5.3",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",
         "symfony/flex": "^1.1",
