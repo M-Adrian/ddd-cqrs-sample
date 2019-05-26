@@ -42,7 +42,7 @@ services:
     first_command_test:
         class: App\Application\Command\Handler\FirstCommandHandler
         arguments:
-#            $argument1: 1
+            $dispatcher: '@event_dispatcher'
 #            $argument2: 2
         tags:
             - { name: tactician.handler, command: App\Application\Command\FirstCommand }

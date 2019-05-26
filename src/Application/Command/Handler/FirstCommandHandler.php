@@ -4,15 +4,22 @@
 namespace App\Application\Command\Handler;
 
 
+use App\Application\Event\TestEvent;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+
 class FirstCommandHandler
 {
-    public function __construct()
-    {
+    protected $dispatcher;
 
+    public function __construct(EventDispatcherInterface $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
     }
 
     public function handle()
     {
-        echo "First Command Works";
+        echo 'Handler works';
+        $event = new TestEvent('Hello Event!');
+        $this->dispatcher->dispatch(TestEvent::NAME, $event);
     }
 }
