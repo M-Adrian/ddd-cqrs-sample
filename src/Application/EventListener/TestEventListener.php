@@ -18,7 +18,7 @@ class TestEventListener implements EventSubscriberInterface
 
     public function onTestEvent(TestEvent $event)
     {
-        dump($event);
+        echo 'TestEvent Works!';
     }
 
 }

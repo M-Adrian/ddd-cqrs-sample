@@ -18,7 +18,7 @@ class FirstCommandHandler
 
     public function handle()
     {
-        echo 'Handler works';
+        echo 'Handler works' . PHP_EOL;
         $event = new TestEvent('Hello Event!');
         $this->dispatcher->dispatch(TestEvent::NAME, $event);
     }
