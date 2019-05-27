@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\EventListener;
+namespace App\Application\EventSubscriber;
 
 
 use App\Application\Event\TestEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class TestEventListener implements EventSubscriberInterface
+class TestEventSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents()
     {

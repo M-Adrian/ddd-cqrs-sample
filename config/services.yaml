@@ -48,11 +48,11 @@ services:
             - { name: tactician.handler, command: App\Application\Command\FirstCommand }
         public: true
 
-#   event listener
-    monthly_keywords_view_listener:
-        class: App\Application\EventListener\TestEventListener
+#   event subscriber
+    first_event_subscriber:
+        class: App\Application\EventSubscriber\TestEventSubscriber
         arguments:
 #            $argument1: '1'
 #            $argument2: '2'
         tags:
-            - { name: kernel.event_listener, event: test.event }
+            - { name: kernel.event_subscriber, event: test.event }
