@@ -43,7 +43,7 @@ services:
         class: App\Application\Command\Handler\FirstCommandHandler
         arguments:
             $dispatcher: '@event_dispatcher'
-#            $argument2: 2
+            $transactionManager: '@transaction_manager'
         tags:
             - { name: tactician.handler, command: App\Application\Command\FirstCommand }
         public: true
@@ -56,3 +56,17 @@ services:
 #            $argument2: '2'
         tags:
             - { name: kernel.event_subscriber, event: test.event }
+
+    transaction_manager:
+        alias: App\Infrastructure\Persistence\DoctrineMySql\DoctrineMySqlTransactionManager
+#        alias: App\Infrastructure\Persistence\DoctrineMongoDb\DoctrineMongoDbTransactionManager
+
+    doctrine_mysql_transaction_manager:
+        class: App\Infrastructure\Persistence\DoctrineMySql\DoctrineMySqlTransactionManager
+        arguments:
+            $em: '@Doctrine\ORM\EntityManagerInterface'
+
+#    doctrine_mongodb_transaction_manager:
+#        class: App\Infrastructure\Persistence\DoctrineMySql\DoctrineMySqlTransactionManager
+#        arguments:
+#            $documentManager: '@Doctrine\ORM\Doc'

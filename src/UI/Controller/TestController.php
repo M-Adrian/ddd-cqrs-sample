@@ -14,6 +14,7 @@ class TestController extends AbstractController
      */
     public function index()
     {
+        $test = 1000;
         return $this->json([
             'message' => 'Welcome to your new controller!',
         ]);
